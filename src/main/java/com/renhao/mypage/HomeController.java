@@ -73,5 +73,12 @@ public class HomeController {
 		return "dologin";
 	}
 	
+	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
+	public String homePage(Locale locale, Model model){
+       
+		
+		return "homePage";
+	}
+	
 	
 }
