@@ -27,21 +27,41 @@ table tr td{
 span {
 	color: blue;
 }
+#photo1{
+   align="center"
+}
+#da_preview{
+  background-color:red;
+  border:5px;
+  solid: blue;
+  width: 70%;
+  float:right;
+}
 
 </style>
 
 </head>
 <body>
+<div id= "div1">
 <table id="table1" border=5>
   <tr>
-    <th>my name</th>
-    <th>photo</th>
+    <th id="photo1" ><img src="img/me111.jpg" ></th>
+    
   </tr>
-  <tr>
-    <td><span>임</span><span>호</span></td>
-    <td><img src="img/me111.jpg" ></td>
+    <tr>
+    <th><p>이름:임호</p>
+        <p>지장: 롯데정보통신</p>
+        <p>학위: 컴퓨과학석사</p>
+    
+    </th>
   </tr>
+
 </table>
+</div>
+<div id="da_preview">
+   ahhhhhhahahahahahhahahahaha
+</div>
+
 <h1>successfully login</h1>
 <hr>
 </body>
