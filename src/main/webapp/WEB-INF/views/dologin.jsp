@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-table tr td{
+/* table tr td{
   font-size: 30px;
   color: #930;
   text-align: right;
@@ -23,7 +23,19 @@ table tr td{
 	 position:absolute;
     left:100px;
     top:150px;
+} */
+#div1{
+   position: relative;
+   bottom:220px;
+   
 }
+
+#da_preview{
+    position: relative;
+    bottom: 500px;
+
+}
+
 span {
 	color: blue;
 }
@@ -34,8 +46,9 @@ span {
   background-color:red;
   border:5px;
   solid: blue;
-  width: 70%;
+  width: 75%;
   float:right;
+  padding:10px;
 }
 
 </style>
@@ -62,7 +75,6 @@ span {
    ahhhhhhahahahahahhahahahaha
 </div>
 
-<h1>successfully login</h1>
 <hr>
 </body>
 </html>
