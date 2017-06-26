@@ -159,9 +159,9 @@
 <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootsnav.js"></script>
-
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 <jsp:include page="dologin.jsp" flush="true"/>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
 <p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
 <p>来源：<a href="http://www.lanrenzhijia.com/" target="_blank">懒人素材</a></p>
 </div>

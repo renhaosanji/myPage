@@ -25,14 +25,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     top:150px;
 } */
 #div1{
-   position: relative;
-   bottom:220px;
+  position:relative; 
+  bottom: 150px;
+  left:30px;
+
    
 }
 
 #da_preview{
-    position: relative;
-    bottom: 500px;
+   
+
 
 }
 
@@ -43,13 +45,30 @@ span {
    align="center"
 }
 #da_preview{
+    position:absolute;
+    bottom: 450px;
+    left:230px;
+    height: 100px;
+    
   background-color:red;
   border:5px;
   solid: blue;
   width: 75%;
-  float:right;
-  padding:10px;
+
 }
+#po_preview{
+    position:absolute;
+    bottom: 340px;
+    left:230px;
+    height: 100px;
+    
+  background-color:yellow;
+  border:5px;
+  solid: blue;
+  width: 75%;
+
+}
+
 
 </style>
 
@@ -72,7 +91,17 @@ span {
 </table>
 </div>
 <div id="da_preview">
-   ahhhhhhahahahahahhahahahaha
+   <div>일기 1</div>
+   <div>일기 2</div>
+   <div>일기 3</div>
+   <div>일기 4</div>
+</div>
+
+<div id="po_preview">
+   <div>일기 1</div>
+   <div>일기 2</div>
+   <div>일기 3</div>
+   <div>일기 4</div>
 </div>
 
 <hr>
