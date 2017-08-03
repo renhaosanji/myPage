@@ -1,4 +1,4 @@
-package com.renhao.mypage;
+package com.renhao.mypage.controller;
 
 import java.io.IOException;
 import java.text.DateFormat;

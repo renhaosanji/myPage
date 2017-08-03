@@ -1,4 +1,4 @@
-package com.renhao.dao;
+package com.renhao.mypage.dao;
 
 import java.util.List;
 

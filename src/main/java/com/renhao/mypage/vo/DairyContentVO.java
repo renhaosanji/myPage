@@ -1,6 +1,6 @@
-package com.renhao.dao;
+package com.renhao.mypage.vo;
 
-public class DairyContentDao {
+public class DairyContentVO {
 	
 	String diary_id;
 	String author;
@@ -10,13 +10,13 @@ public class DairyContentDao {
 	String addedContents;
 	
 	
-	public DairyContentDao() {
+	public DairyContentVO() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	
 
-	public DairyContentDao(String diary_id, String author, String upload_date, String contents, String userId,
+	public DairyContentVO(String diary_id, String author, String upload_date, String contents, String userId,
 			String addedContents) {
 		super();
 		this.diary_id = diary_id;

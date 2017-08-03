@@ -1,6 +1,6 @@
-package com.renhao.dao;
+package com.renhao.mypage.vo;
 
-public class UserInfoM {
+public class UserInfoVO {
 
 
 	String userId;
@@ -9,11 +9,11 @@ public class UserInfoM {
 	String phonenumber;
 	String email;
 	
-	public UserInfoM() {
+	public UserInfoVO() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public UserInfoM(String userId, String password, String nickname, String phonenumber, String email) {
+	public UserInfoVO(String userId, String password, String nickname, String phonenumber, String email) {
 		super();
 		this.userId = userId;
 		this.password = password;
