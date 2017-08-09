@@ -32,12 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
 }
 
-#da_preview{
-   
-
-
-}
-
 span {
 	color: blue;
 }
@@ -69,6 +63,13 @@ span {
 
 }
 
+.edit_botton{
+float:right; 
+width:250px; 
+text-align:left
+
+}
+
 
 </style>
 
@@ -83,21 +84,24 @@ span {
     <tr>
     <th><p>이름:임호</p>
         <p>지장: 롯데정보통신</p>
-        <p>학위: 컴퓨과학석사</p>
+        <p>학위: 컴퓨터과학석사</p>
     
     </th>
   </tr>
-
+ 
 </table>
+<a href=# onClick="javascript:window.open('/mypage/login','','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;"><input type="button">로그인</input></a>
 </div>
 <div id="da_preview">
-   <div>일기 1</div>
+   <div class="edit_botton"> edit</div>
+   <div>일기 1</div> 
    <div>일기 2</div>
    <div>일기 3</div>
    <div>일기 4</div>
 </div>
 
 <div id="po_preview">
+   <div class="edit_botton"> edit</div>
    <div>일기 1</div>
    <div>일기 2</div>
    <div>일기 3</div>
