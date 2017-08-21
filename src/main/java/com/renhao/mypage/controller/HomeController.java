@@ -62,10 +62,26 @@ public class HomeController {
 		
 		return "exercise";
 	}
+	
+	/**
+	 * 
+	 * 
+	 * @param locale
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Locale locale, Model model ){
-		return "login";
+	public String login(Locale locale, Model model,HttpServletRequest request,
+			HttpServletResponse response ){
+		HttpSession session = request.getSession();
+		if (session.getAttribute("user")==null){
+			return "login";
+		}
+		return "loginSuccsess";
 	}
+	
+	
+	
 	@RequestMapping(value = "/dologin", method = RequestMethod.GET)
 	public String dologin(Locale locale, Model model){
        

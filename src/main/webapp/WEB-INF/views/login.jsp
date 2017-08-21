@@ -12,7 +12,7 @@
 <body>
 <h1>등록</h1>
 <hr>
-<form action="/mypage/index3" name="loginForm" method="get">
+<form action="/mypage/chackID" name="loginForm" method="post">
 <table>
 <tr>
 <td>name </td>

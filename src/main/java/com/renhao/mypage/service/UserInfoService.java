@@ -11,5 +11,5 @@ public interface UserInfoService {
 
 	Map getUserInfo() throws Exception;
 	ArrayList<Map> getUserInfoList();
-	
+	Map gerUserInfoByID(String username) throws Exception;
 }

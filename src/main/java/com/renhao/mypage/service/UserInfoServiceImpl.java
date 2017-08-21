@@ -30,6 +30,14 @@ public class UserInfoServiceImpl implements UserInfoService {
 		return null;
 	}
 
-	
-	
+	@Override
+	public Map gerUserInfoByID(String username) throws Exception {
+		// TODO Auto-generated method stub
+		return userInfoDAO.getUserInfoByID(username);
+	}
+
 }
+
+	
+	
+

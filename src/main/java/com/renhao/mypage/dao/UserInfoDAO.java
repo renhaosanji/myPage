@@ -17,4 +17,13 @@ public class UserInfoDAO extends AbstractDAO {
 		return (Map) selectOne("userInfo.getUserInfo");
 	}
 	
+	@SuppressWarnings("unchecked")
+	public Map getUserInfoByID(String username) throws Exception {
+		// TODO Auto-generated method stub
+		
+		
+		return (Map) selectOne("userInfo.findUserInfoByID",username);
+	}
+	
+	
 }

@@ -13,6 +13,15 @@ WHERE USERID='id01'
 
 </select>
 
+<select id="findUserInfoByID" parameterType="string" resultType="hashmap">
 
+select USERID, 
+USERPW, NICKNAME, 
+PHONENUMBER, 
+EMAIL  
+from USERINFO 
+WHERE USERID=#{USERID}
+
+</select>
 
 </mapper>
