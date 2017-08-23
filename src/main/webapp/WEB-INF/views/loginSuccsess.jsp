@@ -7,7 +7,8 @@
 <script type="text/javascript">
 function windowsClose(){
     if (confirm("login success")) {  
-      //  alert("ok"); 
+      //  alert("ok");
+        window.opener.location.reload(); // 전 페이지 리프레시
     	window.close(); 
     }  
     else {  

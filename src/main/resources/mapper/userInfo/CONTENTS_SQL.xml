@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contents">
+
+<resultMap type="java.util.HashMap" id="diaryinfoMap">
+<result javaType="java.lang.String" column="DIARY_ID" property="diaryId"/>
+<result javaType="java.lang.String" column="UPLOAD_DATE" property="uploadDate"/>
+<result javaType="java.lang.String" column="CONTENTS" property="contents"/>
+<result javaType="java.lang.String" column="ADDED_CONTENTS" property="addedContents"/>
+<result javaType="java.lang.String" column="AUTHOR" property="author"/>
+<result javaType="java.lang.String" column="USERID" property="userid"/>
+</resultMap>
+<select id="diaryinfo" parameterType="string" resultMap="diaryinfoMap">
+select DIARY_ID,
+ AUTHOR, 
+ UPLOAD_DATE,
+ CONTENTS,
+ USERID,
+ ADDED_CONTENTS 
+ from DIARYCONTENTS 
+ where USERID=#{USERID}
+</select>
+
+</mapper>

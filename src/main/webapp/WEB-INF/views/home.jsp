@@ -12,7 +12,7 @@
 	Hello world!  jsp 사이클라이브
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  The time on the server is ${serverTime}.${renhao } </P>
 <%!
   String s ="런하오";
   int add(int x, int y){

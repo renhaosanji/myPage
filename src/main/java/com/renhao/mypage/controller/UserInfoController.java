@@ -3,6 +3,7 @@ package com.renhao.mypage.controller;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.renhao.mypage.service.UserInfoService;
@@ -39,11 +42,12 @@ public class UserInfoController {
 
 	@RequestMapping(value = "/chackID")
 	public String chackID(@RequestParam("username") String username, @RequestParam("password") String password,
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
+			HttpServletRequest request, HttpServletResponse response,Model model) throws Exception {
 		Map<String, Object> oneUserInfo = userInfoService.gerUserInfoByID(username);
 		System.out.println(oneUserInfo + "###############################");
 		HttpSession session = request.getSession();
 		String sessionID = session.getId();
+
 		if (oneUserInfo != null) {
 			if (password.equals(oneUserInfo.get("USERPW"))) {
 
