@@ -74,25 +74,26 @@ span {
 }
 
 #da_preview {
-	position: absolute;
-	bottom: 450px;
-	left: 230px;
-	height: 100px;
-	background-color: red;
-	border: 5px;
-	solid: blue;
-	width: 75%;
+    position: absolute;
+    bottom: 75%;
+    left: 20%;
+    height: 10%;
+    background-color: red;
+    border: 5px;
+    solid: blue;
+    width: 75%;
 }
 
 #po_preview {
-	position: absolute;
-	bottom: 340px;
-	left: 230px;
-	height: 100px;
-	background-color: yellow;
-	border: 5px;
-	solid: blue;
-	width: 75%;
+    position: absolute;
+    bottom: 62%;
+    left: 20%;
+    height: 10%;
+    background-color: yellow;
+    border: 5px;
+    solid: blue;
+    width: 75%;
+    white-space: nowrap;
 }
 
 .edit_botton {
@@ -112,7 +113,7 @@ span {
 	<div id="div1">
 		<table id="table1" border=5>
 			<tr>
-				<th id="photo1"><img src="img/me111.jpg"></th>
+			<!-- <th id="photo1"><img src="img/me111.jpg"></th> -->	
 
 			</tr>
 			<tr>

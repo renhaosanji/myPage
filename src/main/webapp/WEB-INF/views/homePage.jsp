@@ -74,6 +74,8 @@
 		nav.navbar.bootsnav ul.nav > li:hover{ background: transparent; }
 		nav.navbar.bootsnav ul.nav > li > a{ margin: 0; }
 	}
+
+
 </style>
 </head>
 <body><script src="/demos/googlegg.js"></script>
@@ -163,8 +165,8 @@
 <jsp:include page="dologin.jsp" flush="true"/>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
-<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
-<p>来源：<a href="http://www.lanrenzhijia.com/" target="_blank">懒人素材</a></p>
+<p>copyright all rights reserved</p>
+<p>from:  <a href="http://www.google.com/" target="_blank">google.com</a></p>
 </div>
 
 
