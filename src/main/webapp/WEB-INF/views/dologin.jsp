@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
-
+<script type="text/javascript" src="js/mainPage.js"></script>
 
 <!-- 로그인후만 편집 버턴 출현 -->
 <script type="text/javascript">
@@ -131,7 +131,7 @@ span {
 	</div>
 	<div id="da_preview">
 		<div class="edit_botton">
-			<input type="button" value="edit" onclick="checsessoin()">   
+			<input type="button" value="edit" onclick="openNeweditPage()">   
 		</div>
 		<c:forEach items="${contentsInfoList}" var="list">    <!--for 리스트 attibutie get -->
 		     <c:out value="${list.contents}"> </c:out>   <!-- 리스트 개체에서 map -->

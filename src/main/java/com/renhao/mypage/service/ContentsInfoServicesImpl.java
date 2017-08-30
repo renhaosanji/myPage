@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.renhao.mypage.dao.ContentsDAO;
+import com.renhao.mypage.vo.DairyContentVO;
 @Service("contentsInfoServices")
 public class ContentsInfoServicesImpl implements ContentsInfoServices  {
 
@@ -18,6 +19,18 @@ public class ContentsInfoServicesImpl implements ContentsInfoServices  {
 	public List<Map<String, Object>> getDiaryContents(String username) throws Exception {
 		// TODO Auto-generated method stub
 		return contentsDAO.getDiaryContents(username);
+	}
+
+	@Override
+	public void insertDairyContents(DairyContentVO dairyContentVO) throws Exception {
+		// TODO Auto-generated method stub
+		contentsDAO.insertDiaryContents(dairyContentVO);
+	}
+
+	@Override
+	public DairyContentVO getDairyById(String DairyId) throws Exception {
+		// TODO Auto-generated method stub
+		return contentsDAO.getDairyByID(DairyId);
 	}
 
 }

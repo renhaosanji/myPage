@@ -19,8 +19,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.renhao.mypage.service.ContentsInfoServices;
+import com.renhao.mypage.vo.DairyContentVO;
 
 /**
  * Handles requests for the application home page.
@@ -106,6 +108,35 @@ public class HomeController {
 		
 		return "homePage";
 	}
+	
+	@RequestMapping(value = "/addDairy", method = RequestMethod.GET)
+	public String addDairy() throws Exception{
+		
+		
+		return "da_edit";
+	}
+	
+	@RequestMapping(value = "/saveDairy", method = RequestMethod.POST)
+	public String svaeDairy(HttpServletRequest request) throws Exception{
+		
+		DairyContentVO dairyContentVO = new DairyContentVO();
+		dairyContentVO.setAddedContents("null");
+		dairyContentVO.setAuthor(request.getParameter("Author"));
+		dairyContentVO.setContents(request.getParameter("contents"));
+		dairyContentVO.setUpload_date(request.getParameter("Date"));
+		dairyContentVO.setUserId("id01");
+		contentsInfoServices.insertDairyContents(dairyContentVO);
+		return "da_edit";
+	}
+	
+	@RequestMapping(value = "/getDairyByUserID", method= RequestMethod.POST)
+	public void getDairyByUserID(HttpServletRequest request, HttpServletResponse response){
+		
+		request.getParameter("DairyID");
+		
+		
+	}
+	
 	
 	
 }

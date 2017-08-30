@@ -2,23 +2,84 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="contents">
 
-<resultMap type="java.util.HashMap" id="diaryinfoMap">
-<result javaType="java.lang.String" column="DIARY_ID" property="diaryId"/>
-<result javaType="java.lang.String" column="UPLOAD_DATE" property="uploadDate"/>
-<result javaType="java.lang.String" column="CONTENTS" property="contents"/>
-<result javaType="java.lang.String" column="ADDED_CONTENTS" property="addedContents"/>
-<result javaType="java.lang.String" column="AUTHOR" property="author"/>
-<result javaType="java.lang.String" column="USERID" property="userid"/>
-</resultMap>
-<select id="diaryinfo" parameterType="string" resultMap="diaryinfoMap">
-select DIARY_ID,
- AUTHOR, 
- UPLOAD_DATE,
- CONTENTS,
- USERID,
- ADDED_CONTENTS 
- from DIARYCONTENTS 
- where USERID=#{USERID}
-</select>
+	<resultMap type="java.util.HashMap" id="diaryinfoMap">
+		<result javaType="java.lang.String" column="DIARY_ID" property="diaryId" />
+		<result javaType="java.lang.String" column="UPLOAD_DATE"
+			property="uploadDate" />
+		<result javaType="java.lang.String" column="CONTENTS" property="contents" />
+		<result javaType="java.lang.String" column="ADDED_CONTENTS"
+			property="addedContents" />
+		<result javaType="java.lang.String" column="AUTHOR" property="author" />
+		<result javaType="java.lang.String" column="USERID" property="userid" />
+	</resultMap>
+    
+
+	<resultMap type="com.renhao.mypage.vo.DairyContentVO" id="insertDairy_resultMap">
+		<result column="AUTHOR" property="author" javaType="java.lang.String"/>
+		<result column="UPLOAD_DATE" property="upload_date" javaType="java.lang.String" />
+		<result column="DIARY_ID" property="diary_id" javaType="java.lang.String"/>
+		<result column="CONTENTS" property="contents" javaType="java.lang.String"/>
+		<result column="ADDED_CONTENTS" property="addedContents" javaType="java.lang.String"/>
+		<result column="USERID" property="userId" javaType="java.lang.String" />
+	</resultMap>
+	
+	<parameterMap type="com.renhao.mypage.vo.DairyContentVO" id="insertDairy_parameterMap">
+	  <parameter property="author" />
+	  <parameter property="upload_date" />
+	  <parameter property="diary_id" />
+	  <parameter property="contents" />
+	  <parameter property="addedContents" />
+	  <parameter property="userId" />
+	  
+	</parameterMap>
+
+
+
+	<select id="diaryinfo" parameterType="string" resultMap="diaryinfoMap">
+		select DIARY_ID,
+		AUTHOR,
+		UPLOAD_DATE,
+		CONTENTS,
+		USERID,
+		ADDED_CONTENTS
+		from DIARYCONTENTS
+		where USERID=#{USERID}
+	</select>
+
+	<select id="insertDairy"  parameterType="com.renhao.mypage.vo.DairyContentVO">
+		Insert into DIARYCONTENTS(DIARY_ID,
+		AUTHOR,
+		UPLOAD_DATE,
+		CONTENTS,
+		USERID,
+		ADDED_CONTENTS)
+		values (
+		DIARYCONTENTS_DIARY_ID.NEXTVAL,
+		#{author},
+		TO_DATE(SYSDATE),
+		#{contents},
+		#{userId},
+		#{addedContents}
+		)
+
+
+	</select>
+	
+		<select id="getDairyByDairyID"  parameterType="string" resultMap="insertDairy_resultMap">
+        select DIARY_ID,
+		AUTHOR,
+		UPLOAD_DATE,
+		CONTENTS,
+		USERID,
+		ADDED_CONTENTS
+		from DIARYCONTENTS
+		where USERID=#{DIARY_ID} 
+        
+
+	</select>
+	
+
+
+
 
 </mapper>
