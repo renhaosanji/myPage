@@ -4,6 +4,7 @@
 <html>
 <head>
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/contentsContllor.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Add dairy</title>
 <style type="text/css">
@@ -15,7 +16,7 @@ table{
 
 </head>
 <body>
-<form action="/mypage/saveDairy" name="da_update" method="post"> 
+<!--  <form action="/mypage/saveDairy" name="da_update" method="post"> -->
 <table>
 <tr>
 <td>Author</td> <td><input type="text" name="Author"> </td>
@@ -35,7 +36,7 @@ table{
 
 </table>
 
-</form> 
+ <!-- </form>  -->
 
 </body>
 </html>
