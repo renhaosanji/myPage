@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -119,12 +120,18 @@ public class HomeController {
 	@RequestMapping(value = "/saveDairy", method = RequestMethod.POST)
 	public String svaeDairy(HttpServletRequest request) throws Exception{
 		
+		HttpSession session = request.getSession();
+		String userID = (String) session.getAttribute("user");
 		DairyContentVO dairyContentVO = new DairyContentVO();
 		dairyContentVO.setAddedContents("null");
+	//	dairyContentVO.setAuthor(request.getParameter("Author"));
 		dairyContentVO.setAuthor(request.getParameter("Author"));
 		dairyContentVO.setContents(request.getParameter("contents"));
 		dairyContentVO.setUpload_date(request.getParameter("Date"));
 		dairyContentVO.setUserId("id01");
+		
+		System.out.println("HomeController.svaeDairy()"+dairyContentVO.toString());
+		
 		contentsInfoServices.insertDairyContents(dairyContentVO);
 		return "da_edit";
 	}
@@ -132,7 +139,7 @@ public class HomeController {
 	@RequestMapping(value = "/getDairyByUserID", method= RequestMethod.POST)
 	public void getDairyByUserID(HttpServletRequest request, HttpServletResponse response){
 		
-		request.getParameter("DairyID");
+		
 		
 		
 	}

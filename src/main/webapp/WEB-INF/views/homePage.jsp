@@ -19,7 +19,7 @@
 	}
 	nav.navbar.bootsnav{
 		border: none;
-		margin-bottom: 150px;
+		margin-bottom: 30px;
 	}
 	.navbar-nav{
 		float: left;
@@ -74,6 +74,13 @@
 		nav.navbar.bootsnav ul.nav > li:hover{ background: transparent; }
 		nav.navbar.bootsnav ul.nav > li > a{ margin: 0; }
 	}
+	#bottomPage{
+	  position: relative; 
+	  top: 100px
+	
+	}
+
+	
 
 
 </style>
@@ -162,8 +169,12 @@
 <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootsnav.js"></script>
-<jsp:include page="dologin.jsp" flush="true"/>
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+<div class="functionPage">
+<jsp:include page="dologin.jsp" flush="true"/> 
+</div>
+
+<div id="bottomPage" style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
 <p>copyright all rights reserved</p>
 <p>from:  <a href="http://www.google.com/" target="_blank">google.com</a></p>

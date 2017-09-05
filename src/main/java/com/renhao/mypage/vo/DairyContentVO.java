@@ -66,6 +66,14 @@ public class DairyContentVO {
 		this.addedContents = addedContents;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "DairyContentVO [diary_id=" + diary_id + ", author=" + author + ", upload_date=" + upload_date
+				+ ", contents=" + contents + ", userId=" + userId + ", addedContents=" + addedContents + "]";
+	}
+
 	
 	
 }

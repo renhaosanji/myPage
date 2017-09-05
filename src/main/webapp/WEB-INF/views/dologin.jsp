@@ -60,8 +60,8 @@ $(document).ready(function(){
     top:150px;
 } */
 #div1 {
-	position: relative;
-	bottom: 150px;
+	position: absolute;
+    
 	left: 30px;
 }
 
@@ -74,25 +74,27 @@ span {
 }
 
 #da_preview {
-    position: absolute;
-    bottom: 75%;
+    position: relative;
+    top:0px;
     left: 20%;
     height: 10%;
-    background-color: red;
-    border: 5px;
+    background-color: gray;
+    border: 10px;
+    
     solid: blue;
-    width: 75%;
+    width: 60%;
+    
 }
 
 #po_preview {
-    position: absolute;
+    position: relative;
     bottom: 62%;
     left: 20%;
     height: 10%;
     background-color: yellow;
     border: 5px;
     solid: blue;
-    width: 75%;
+    width: 60%;
     white-space: nowrap;
 }
 
