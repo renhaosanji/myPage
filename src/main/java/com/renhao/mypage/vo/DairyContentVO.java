@@ -1,5 +1,7 @@
 package com.renhao.mypage.vo;
 
+
+
 public class DairyContentVO {
 	
 	String diary_id;

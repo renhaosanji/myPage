@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.renhao.mythree">
+	<logger name="com.renhao.myPage">
 		<level value="info" />
 	</logger>
 	

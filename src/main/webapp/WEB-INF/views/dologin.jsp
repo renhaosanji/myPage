@@ -112,25 +112,7 @@ span {
 
 
 <body> 
-	<div id="div1">
-		<table id="table1" border=5>
-			<tr>
-			<!-- <th id="photo1"><img src="img/me111.jpg"></th> -->	
 
-			</tr>
-			<tr>
-				<th><p>이름:임호</p>
-					<p>직장: 롯데정보통신</p>
-					<p>${renhao}</p>
-					</th>
-			</tr>
-
-		</table>
-		<a href=#
-			onClick="javascript:window.open('/mypage/login','','width=632,height=388,toolbar=no, status=no, menubar=no, resizable=yes, scrollbars=yes');return false;">
-			<input type="button" value="로그인"></input>
-		</a>
-	</div>
 	<div id="da_preview">
 		<div class="edit_botton">
 			<input type="button" value="edit" onclick="openNeweditPage()">   
