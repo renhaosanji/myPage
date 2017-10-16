@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title></title>
+
 </head>
 <body>
 <div class="right_side_div"><P>

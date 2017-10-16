@@ -242,9 +242,14 @@ body {
 .functionPage{
 	position: relative;
 	top: 100px;
+	left: 20%;
 }
 
 .right_side{
 	position: absolute;
 	top: 100px;
+}
+
+.buttomLine{
+	position: relative;
 }

@@ -69,7 +69,7 @@ public class HomeController {
 
 		String formattedDate = dateFormat.format(date);
 
-		model.addAttribute("serverTime", "ししししししし");
+		model.addAttribute("serverTime", "鐃緒申鐃緒申鐃緒申鐃緒申鐃緒申鐃緒申鐃緒申");
 		model.addAttribute("renhao", "222222222");
 		return "home";
 	}
@@ -112,7 +112,7 @@ public class HomeController {
 
 		model.addAttribute("contentsInfoList", contentsinfo);
 		System.out.println("version: " + SpringVersion.getVersion());
-		return "mainPage";
+		return "dologin";
 	}
 
 	@RequestMapping(value = "/addDairy", method = RequestMethod.GET)
@@ -123,7 +123,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/saveDairy", method = RequestMethod.POST, consumes = "application/json")
 	@ResponseBody
-	public void svaeDairy(HttpServletRequest request, @RequestBody DairyContentVO dairyContentVO ) throws Exception {
+	public void svaeDairy(HttpServletRequest request, @RequestBody DairyContentVO dairyContentVO) throws Exception {
 		System.out.println("saveDairy!!!!!!!!!!!!");
 		HttpSession session = request.getSession();
 		String userID = (String) session.getAttribute("user");
@@ -139,18 +139,17 @@ public class HomeController {
 
 		contentsInfoServices.insertDairyContents(dairyContentVO);
 
-
-
 	}
-	@RequestMapping(value="/upload",method = RequestMethod.POST)
-	public void fileUpload(MultipartFile file, ModelMap model,  MultipartHttpServletRequest request) {
-		
-		Iterator<String> itr= request.getFileNames();
+
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	public void fileUpload(MultipartFile file, ModelMap model, MultipartHttpServletRequest request) {
+
+		Iterator<String> itr = request.getFileNames();
 		if (itr.hasNext()) {
-			
+
 			file = request.getFile(itr.next());
-			System.out.println(file.getOriginalFilename() +" uploaded!");
-            try {
+			System.out.println(file.getOriginalFilename() + " uploaded!");
+			try {
 				System.out.println(file.getBytes().length);
 				System.out.println(file.getOriginalFilename());
 			} catch (IOException e) {
@@ -158,26 +157,28 @@ public class HomeController {
 				e.printStackTrace();
 			}
 
-//			String path = request.getSession().getServletContext().getRealPath("upload");
-//			String fileName = file.getOriginalFilename();
-//			File targetFile = new File(path, fileName);
-//			if (!targetFile.exists()) {
-//				targetFile.mkdirs();
-//			}
+			// String path =
+			// request.getSession().getServletContext().getRealPath("upload");
+			// String fileName = file.getOriginalFilename();
+			// File targetFile = new File(path, fileName);
+			// if (!targetFile.exists()) {
+			// targetFile.mkdirs();
+			// }
 			try {
-				file.transferTo(new File("d:/upload/"+file.getOriginalFilename()));
+				file.transferTo(new File("d:/upload/" + file.getOriginalFilename()));
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}	
-		//	model.addAttribute("fileUrl", request.getContextPath() + "/upload/" + fileName);
-		//	System.out.println(request.getContextPath() + "/upload/" + fileName);
+			}
+			// model.addAttribute("fileUrl", request.getContextPath() +
+			// "/upload/" + fileName);
+			// System.out.println(request.getContextPath() + "/upload/" +
+			// fileName);
 		}
 	}
-	
 
 	@RequestMapping(value = "/getDairyByUserID", method = RequestMethod.POST)
 	public void getDairyByUserID(HttpServletRequest request, HttpServletResponse response) {
@@ -185,5 +186,7 @@ public class HomeController {
 		logger.debug("++++++++++++++++++++++");
 
 	}
+	
+	
 
 }

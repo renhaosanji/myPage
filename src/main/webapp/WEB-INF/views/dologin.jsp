@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
@@ -19,13 +19,12 @@
 <!-- 로그인후만 편집 버턴 출현 -->
 <script type="text/javascript">
 $(document).ready(function(){
-	  if("<%=session.getAttribute("user")%>"
-			  =='null'){
-		  $(".edit_botton").hide();
-		  }
+	  if("<%=session.getAttribute("user")%>
+	" == 'null') {
+			$(".edit_botton").hide();
+		}
 
 	});
-
 </script>
 
 <!-- 지정 타클 jquery로 contorll -->
@@ -42,8 +41,6 @@ $(document).ready(function(){
 </script>
  -->
 
-
-<title>Insert title here</title>
 <style type="text/css">
 /* table tr td{
   font-size: 30px;
@@ -61,7 +58,6 @@ $(document).ready(function(){
 } */
 #div1 {
 	position: absolute;
-    
 	left: 30px;
 }
 
@@ -74,28 +70,24 @@ span {
 }
 
 #da_preview {
-    position: relative;
-    top:0px;
-    left: 20%;
-    height: 10%;
-    background-color: gray;
-    border: 10px;
-    
-    solid: blue;
-    width: 60%;
-    
+	position: relative;
+	top: 0px;
+	height: 10%;
+	background-color: gray;
+	border: 10px;
+	solid: blue;
+	width: 60%;
 }
 
 #po_preview {
-    position: relative;
-    bottom: 62%;
-    left: 20%;
-    height: 10%;
-    background-color: yellow;
-    border: 5px;
-    solid: blue;
-    width: 60%;
-    white-space: nowrap;
+	position: relative;
+	bottom: 62%;
+	height: 10%;
+	background-color: yellow;
+	border: 5px;
+	solid: blue;
+	width: 60%;
+	white-space: nowrap;
 }
 
 .edit_botton {
@@ -111,30 +103,45 @@ span {
 </head>
 
 
-<body> 
+<body>
 
-	<div id="da_preview">
-		<div class="edit_botton">
-			<input type="button" value="edit" onclick="openNeweditPage()">   
+	<div>
+		<jsp:include page="./compement/mainhead.jsp" flush="true" />
+	</div>
+
+
+	<div class="functionPage">
+		<div id="da_preview">
+			<div class="edit_botton">
+				<input type="button" value="edit" onclick="openNeweditPage()">
+			</div>
+			<c:forEach items="${contentsInfoList}" var="list">
+				<!--for 리스트 attibutie get -->
+				<c:out value="${list.contents}">
+				</c:out>
+				<!-- 리스트 개체에서 map -->
+				<div></div>
+				<!-- div 한줄씩 표시하려면 이렇게  -->
+			</c:forEach>
+			<div>11111111111</div>
+
 		</div>
-		<c:forEach items="${contentsInfoList}" var="list">    <!--for 리스트 attibutie get -->
-		     <c:out value="${list.contents}"> </c:out>   <!-- 리스트 개체에서 map -->
-		     <div></div>                              <!-- div 한줄씩 표시하려면 이렇게  -->
-		</c:forEach>
-		<div>11111111111</div>
+
+		<div id="po_preview">
+			<div class="edit_botton">
+				<%=session.getAttribute("user")%></div>
+			<div>일기 1</div>
+			<div>일기 2</div>
+			<div>일기 3</div>
+			<div>일기 4</div>
+		</div>
+	</div>
+
+	<div class="buttomLine">
+		<jsp:include page="./compement/buttomLine.jsp"></jsp:include>
 
 	</div>
 
-	<div id="po_preview">
-		<div class="edit_botton">
-			<%=session.getAttribute("user")%></div>
-		<div>일기 1</div>
-		<div>일기 2</div>
-		<div>일기 3</div>
-		<div>일기 4</div>
-	</div>
-
-	<hr>
 
 
 </body>
