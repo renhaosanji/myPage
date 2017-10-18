@@ -15,7 +15,7 @@
 <jsp:include page="./compement/mainhead.jsp" flush="true"/> 
 </div>
   
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script> 
 
 <div class="functionPage">

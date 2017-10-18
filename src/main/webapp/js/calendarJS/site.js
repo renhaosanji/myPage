@@ -32,7 +32,13 @@ $(document).ready( function() {
         if($(target.element).hasClass('inactive')) {
           console.log('not a valid datepicker date.');
         } else {
+          console.log(target.date._i);	
           console.log('VALID datepicker date.');
+          $("#date").text(target.date._i);
+          var dt = new Date();
+          
+          $("#time").text(dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds());
+          
         }
       },
       nextMonth: function() {

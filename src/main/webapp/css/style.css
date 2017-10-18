@@ -84,7 +84,7 @@ body {
 	height: 51px;
 	position: absolute;
 	top: -1px;
-	background: url(img/navItemBg_14.png);
+	background: url(../img/navItemBg_14.png);
 	display: none;
 }
 
@@ -129,7 +129,7 @@ body {
 	padding: 0 0 0 16px;
 	float: left;
 	color: #333;
-	background: url("img/arrowSub.png") left center no-repeat;
+	background: url("../img/arrowSub.png") left center no-repeat;
 }
 
 .subNav ul a:hover {

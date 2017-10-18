@@ -10,7 +10,7 @@
 
 </head>
 <body>
-	<script src="/demos/googlegg.js"></script>
+<!--  	<script src="/demos/googlegg.js"></script> -->
 
 	<div class="wrapper">
 		<div class="head">
@@ -104,7 +104,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
 	<script type="text/javascript" src="js/script.js"></script>
 
 	<div class="right_side">
