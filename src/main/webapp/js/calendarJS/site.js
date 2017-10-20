@@ -35,10 +35,11 @@ $(document).ready( function() {
           console.log(target.date._i);	
           console.log('VALID datepicker date.');
           $("#date").text(target.date._i);
+          $("#D_date").text(target.date._i);
           var dt = new Date();
-          
           $("#time").text(dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds());
-          
+          $("#D_time").text(dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds());
+          $("#dialog").dialog();
         }
       },
       nextMonth: function() {

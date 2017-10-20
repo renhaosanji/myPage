@@ -20,14 +20,17 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="css/component/dialog/FloatDailog.css"
 	type="text/css">
+<script src="js/calendarJS/site.js" type="text/javascript"></script>
 
 
 
-<script type="text/javascript">
+
+<!--  <script type="text/javascript">
 	$(function() {
 		$("#dialog").dialog();
 	});
 </script>
+-->
 
 <style type="text/css">
 #canldar {
@@ -97,9 +100,39 @@ table.eventDetail tr, td, th {
 	</div>
 
 	<div id="dialog" title="Basic dialog">
-		<p>This is the default dialog which is useful for displaying
-			information. The dialog window can be moved, resized and closed with
-			the 'x' icon.</p>
+		<div>
+			<table class="eventDetail">
+				<tr>
+					<th>Date</th>
+					<td id="D_date" class="data">ddmmyy</td>
+				</tr>
+
+				<tr>
+					<th>Time</th>
+					<td id="D_time" class="data">ddmmyy</td>
+				</tr>
+
+				<tr>
+					<th>Place</th>
+					<td id="time" class="data"><textarea
+							value="input event address"></textarea></td>
+				</tr>
+				<tr>
+					<th>toDo</th>
+					<td id="time" class="data"><textarea
+							value="input what you want to do"></textarea></td>
+				</tr>
+
+
+
+			</table>
+
+		</div>
+		<div>
+			<span><input type="button" value="submit" onclick=""></span>
+			<span><input type="button" value="cancel" onclick=""></span>
+		</div>
+
 	</div>
 
 
