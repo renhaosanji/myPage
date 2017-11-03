@@ -15,21 +15,21 @@ import org.springframework.transaction.annotation.Transactional;
 import com.renhao.mypage.dao.ContentsDAO;
 import com.renhao.mypage.service.ContentsInfoServices;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:webapp/WEB-INF/spring/appServlet/*.xml")
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration("file:webapp/WEB-INF/spring/appServlet/*.xml")
 public class UnitTest {
 
 
-	@Resource(name = "contentsInfoServices")
-	public ContentsInfoServices contentsInfoServices;
-	
-	@Resource(name="contentsDAO")
-	ContentsDAO contentsDAO;
-
-    @Test
-	public void test(){
-    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
-		context.start();
-	}
+//	@Resource(name = "contentsInfoServices")
+//	public ContentsInfoServices contentsInfoServices;
+//	
+//	@Resource(name="contentsDAO")
+//	ContentsDAO contentsDAO;
+//
+//    @Test
+//	public void test(){
+//    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
+//		context.start();
+//	}
 	
 }
