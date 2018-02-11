@@ -106,12 +106,22 @@ public class HomeController {
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public String homePage(Locale locale, Model model) throws Exception {
 		model.addAttribute("renhao", "rrrrrrrrrrrrrrrrrrrrrrr");
-		List<Map<String, Object>> contentsinfo = contentsInfoServices.getDiaryContents("id01");
+		List<Map<String, Object>> contentsinfo =null;
+		
+		try{
+			 contentsinfo = contentsInfoServices.getDiaryContents("id01");
+		}catch (IndexOutOfBoundsException e){
+			System.out.println("dddddddddddddd");
 
-		System.out.println(contentsinfo.get(0) + "dddddddddddddd");
+			model.addAttribute("contentsInfoList", "no data!");
+			System.out.println("version: " + SpringVersion.getVersion());
+		}
+	//	List<Map<String, Object>> contentsinfo = contentsInfoServices.getDiaryContents("id01");
 
-		model.addAttribute("contentsInfoList", contentsinfo);
-		System.out.println("version: " + SpringVersion.getVersion());
+//		System.out.println(contentsinfo.get(0) + "dddddddddddddd");
+//
+//		model.addAttribute("contentsInfoList", contentsinfo);
+//		System.out.println("version: " + SpringVersion.getVersion());
 		return "dologin";
 	}
 
