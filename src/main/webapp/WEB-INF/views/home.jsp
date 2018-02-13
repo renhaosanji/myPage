@@ -13,6 +13,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}.${renhao } </P>
+<P>  session is ${sessionID}.${renhao } </P>
 <%!
   String s ="런하오";
   int add(int x, int y){
