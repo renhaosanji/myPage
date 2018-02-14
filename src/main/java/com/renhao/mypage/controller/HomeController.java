@@ -24,15 +24,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.renhao.mypage.ToolKit.FileManagement;
 import com.renhao.mypage.service.ContentsInfoServices;
 import com.renhao.mypage.vo.DairyContentVO;
-
-import oracle.net.aso.i;
 
 /**
  * Handles requests for the application home page.
@@ -48,28 +46,26 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String home(Locale locale, Model model, HttpServletRequest request, HttpServletResponse responese)
+	public String home(Locale locale, Model model, HttpServletRequest request)
 			throws ServletException, IOException {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
-		responese.setCharacterEncoding("UTF-8");
-		responese.setContentType("text/html;charset=UTF-8");
 		HttpSession session = request.getSession();
 		session.setAttribute("data", "mysession");
 		String sessionId = session.getId();
 		if (session.isNew()) {
-			responese.getWriter().println("builed sessionId" + sessionId);
+			model.addAttribute("sessionID", "builed sessionId"+sessionId);
 			System.out.println("builed sessionId" + sessionId);
 		} else {
-			responese.getWriter().println("It is a exisited session" + sessionId);
+			model.addAttribute("sessionID","It is a exisited session" + sessionId);
 			System.out.println("It si a exisited sessionId" + sessionId);
 		}
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 
 		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", "��������������");
+         
+		model.addAttribute("serverTime", formattedDate);
 		model.addAttribute("renhao", "222222222");
 		return "home";
 	}
@@ -131,7 +127,7 @@ public class HomeController {
 		return "da_edit";
 	}
 
-	@RequestMapping(value = "/saveDairy", method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(value = "/saveDairy", method = RequestMethod.POST)
 	@ResponseBody
 	public void svaeDairy(HttpServletRequest request, @RequestBody DairyContentVO dairyContentVO) throws Exception {
 		System.out.println("saveDairy!!!!!!!!!!!!");
@@ -152,42 +148,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public void fileUpload(MultipartFile file, ModelMap model, MultipartHttpServletRequest request) {
+	public void fileUpload(MultipartHttpServletRequest request) {
+       FileManagement.fileUpLoad(request);
 
-		Iterator<String> itr = request.getFileNames();
-		if (itr.hasNext()) {
-
-			file = request.getFile(itr.next());
-			System.out.println(file.getOriginalFilename() + " uploaded!");
-			try {
-				System.out.println(file.getBytes().length);
-				System.out.println(file.getOriginalFilename());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			// String path =
-			// request.getSession().getServletContext().getRealPath("upload");
-			// String fileName = file.getOriginalFilename();
-			// File targetFile = new File(path, fileName);
-			// if (!targetFile.exists()) {
-			// targetFile.mkdirs();
-			// }
-			try {
-				file.transferTo(new File("d:/upload/" + file.getOriginalFilename()));
-			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			// model.addAttribute("fileUrl", request.getContextPath() +
-			// "/upload/" + fileName);
-			// System.out.println(request.getContextPath() + "/upload/" +
-			// fileName);
-		}
 	}
 
 	@RequestMapping(value = "/getDairyByUserID", method = RequestMethod.POST)
