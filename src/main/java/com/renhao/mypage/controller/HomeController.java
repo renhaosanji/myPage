@@ -73,7 +73,8 @@ public class HomeController {
 	@RequestMapping(value = "/index2", method = RequestMethod.GET)
 	public String exercise(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("index2+++++++++=" + request.getSession().getId());
-
+		request.getSession().removeAttribute("user");
+		System.out.println("index2+++++++++=" + request.getSession().getAttribute("user"));
 		return "exercise";
 	}
 
@@ -85,7 +86,7 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
+	public String login(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("user") == null) {
 			return "login";
